@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/storage/emulated/0/html/login/images.jpeg'); /* Adaugă URL-ul imaginii tale aici */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #4CAF50; /* Verde pentru titlu */
+        }
+        .login-container input[type="text"], 
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        .reset-password {
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Autentificare</h2>
+    <form onsubmit="return login();">
+        <input type="text" id="username" placeholder="Nume utilizator" required>
+        <input type="password" id="password" placeholder="Parolă" required>
+        <button type="submit">Autentificare</button>
+    </form>
+    <a class="reset-password" href="reset_password.html">Resetare parolă</a>
+</div>
+
+<script>
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Verifică dacă numele de utilizator și parola sunt corecte
+        if (username === 'Codrin2013' && password === 'Codrinhi12') {
+            // Deschide un nou tab cu linkul dorit
+            window.open('https://www.example.com', '_blank'); // Înlocuiește cu linkul dorit
+            return false; // Previi trimiterea formularului
+        } else {
+            alert('Nume utilizator sau parolă incorecte!');
+            return false; // Previi trimiterea formularului
+        }
+    }
+</script>
+
+</body>
+</html>
